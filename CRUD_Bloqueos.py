@@ -7,11 +7,11 @@ def crud_bloqueo():
     st.subheader("Bloqueos Agendas COT")
 
     df = pd.read_csv("COT.csv",encoding='utf-8', parse_dates=['Fecha'])
-
-    df_mask = df["Bloqueos"] >0
-    filtered_df = df[df_mask]
     listado_medicos=df['Medico'].unique()
     listado_agendas=df['Agenda'].unique()
+    df_mask = df["Bloqueos"] >0
+    filtered_df = df[df_mask]
+
     with st.form("my_form"):
             edited_df = st.data_editor(filtered_df,
                         width=800,
