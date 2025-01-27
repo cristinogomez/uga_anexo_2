@@ -6,11 +6,10 @@ def acv():
 
 
     df = pd.read_csv("ACV.csv",encoding='utf-8',parse_dates=['Fecha'])
-    
+    listado_vasculares=df["Medico"].unique()
     df['Fecha']= pd.to_datetime(df['Fecha'])
     col3,col4 = st.columns([2, 1])
     with col3:
-        listado_vasculares=df["Medico"].unique()
         med=st.selectbox('Medico',listado_vasculares)
         df_filtrado_medico = df[df['Medico']== med].head()
         
