@@ -36,7 +36,7 @@ def crud_bloqueo():
 
                     mensaje=st.success('Los datos se han guardado corecctamente')
 
-                    st.rerun
+                    st.rerun()
 
 
 
